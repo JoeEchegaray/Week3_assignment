@@ -140,7 +140,7 @@ function arrayAverage(arrayOfNumbers) {
         arraySum += arrayOfNumbers[i];
     }
     let output = arraySum / arrayOfNumbers.length;
-    //console.log(output);
+    console.log(output);
     return output;
 }
 arrayAverage(numberArray);
@@ -150,7 +150,7 @@ console.log(' \n Question 11: \n ');
 
 function largerAverage(array1, array2) {
        if (arrayAverage(array1) > arrayAverage(array2)) {
-           console.log(true);
+           console.log(true); //added console.log command to show results in console
            return true;
     } else {
            console.log(false);
