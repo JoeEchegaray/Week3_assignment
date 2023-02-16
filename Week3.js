@@ -139,7 +139,9 @@ function arrayAverage(arrayOfNumbers) {
     for (let i = 0; i < arrayOfNumbers.length; i++) {
         arraySum += arrayOfNumbers[i];
     }
-    console.log(arraySum / arrayOfNumbers.length);
+    let output = arraySum / arrayOfNumbers.length;
+    //console.log(output);
+    return output;
 }
 arrayAverage(numberArray);
 
@@ -147,10 +149,12 @@ arrayAverage(numberArray);
 console.log(' \n Question 11: \n ');
 
 function largerAverage(array1, array2) {
-    if (arrayAverage(array1) > arrayAverage(array2)) {
-        return true;
+       if (arrayAverage(array1) > arrayAverage(array2)) {
+           console.log(true);
+           return true;
     } else {
-        return false;
+           console.log(false);
+           return false;
     }
 }
 largerAverage(numberArray, nameLengths);
