@@ -108,8 +108,8 @@ console.log(wordConcant('Hello', 8));
 console.log(' \n Question 8: \n ');
 
 function fullName(firstName, lastName) {
-    let fullName = firstName + ' ' + lastName;
-    return fullName;
+    let fullName = firstName + ' ' + lastName; // this is creating a new variable called fullName which will add the two arguments in the desired format
+    return fullName; 
 }
 console.log(fullName('John', 'Smith'));
 
@@ -117,7 +117,7 @@ console.log(fullName('John', 'Smith'));
 console.log(' \n Question 9: \n ');
 
 let numberArray = [20, 10, 5, 8, 6];
-console.log(numberArray);
+console.log(numberArray); // I am console logging the array created for the sake of the assignment to show what the numbers are in the array in the console log above the output of the function
 function sumTrue(array) {
     let sum = 0;
     for (let i = 0; i < numberArray.length; i++) {
@@ -148,7 +148,7 @@ console.log(arrayAverage(numberArray));
 console.log(' \n Question 11: \n ');
 
 function largerAverage(array1, array2) {
-       if (arrayAverage(array1) > arrayAverage(array2)) {
+       if (arrayAverage(array1) > arrayAverage(array2)) { //in this line I am using the arrayAverage function created earlier in this assignment in an if statement to determine if array1 is larger than array 2
            return true;
     } else {
            return false;
@@ -172,14 +172,13 @@ console.log(willBuyDrink(true, 15));
 // 13.	Create a function of your own that solves a problem.In comments, write what the function does and why you created it.
 console.log(' \n Question 13: \n ');
 
-//I have chosen to make a tip calculator, this function will take two paramaters. The Ticket Cost, and the Percentage
+//I have chosen to make a tip calculator, this function will take two paramaters. The cost of the Bill, and the Tip Percentage to be left.
+//I've chosen to create this function because this is a common thing that alot of people struggle with, myself included. 
 
 function tipCalculator(bill, tipPercent) {
     let tipAmount = ((bill * tipPercent) / 100); //this line here will determine the amount of the tip based on the percentage input by the user
     let tip = Math.round(100 * tipAmount) / 100; //this line will round the cents of the tip amount to the nearest hundredth
     let totalAmount = bill + tip; // this line will add the tip to the bill amount calculating the total amount to be paid by the user
-    let total = Math.round(100 * totalAmount) / 100; //this line will round the cents of the tip amount to the nearest hundredth
-    return 'The tip will be ' + tip + '. Making your total amount ' + total + '.'; // added the console.log output for the assignment so we can see that the code is functional.
+    return 'The tip will be $' + tip + '. Making your total amount $' + totalAmount + '.'; 
 }
-
-console.log(tipCalculator(82.79, 14));
+console.log(tipCalculator(76.25, 15));
