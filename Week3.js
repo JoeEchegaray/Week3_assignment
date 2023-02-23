@@ -1,7 +1,7 @@
 // 1.	Create an array called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
 console.log(' \n Question 1: \n ');
 
-const ages = [3, 9, 23, 64, 2, 8, 28, 93];
+let ages = [3, 9, 23, 64, 2, 8, 28, 93];
 console.log(ages);
 
 // 1a.Programmatically subtract the value of the first element in the array from the value in the last element of the array
@@ -9,23 +9,21 @@ console.log(ages);
 // •	ages[7] – ages[0] is not allowed!
 console.log(' \n Question 1a: \n ');
 
-// let lastValue = ages[ages.length-1];
+// let lastValue = ages[ages.length-1]; //this method does work, however due to it being used multiple times it makes more sense to me to use this as a function instead.
 // console.log(lastValue - ages[0]);
 
 function lastArraySubtract(array) {
     let lastArrayValue = ages[ages.length - 1];
     let result = lastArrayValue - ages[0];
-    return result;
+    return result; //this returns the result so it can be called outside of the function
 }
 console.log(lastArraySubtract(ages));
 
 // 1b.Add a new age to your array and repeat the step above to ensure it is dynamic. (works for arrays of different lengths).
 console.log(' \n Question 1b: \n ');
 
-ages.push(29);
-// lastValue = ages[ages.length-1]; 
-// console.log(lastValue - ages[0]);
-console.log(lastArraySubtract(ages));
+ages.push(29); //array.push used to add new value to the end of the array
+console.log(lastArraySubtract(ages)); //using the function from the previous question to esure that it's dynamic to the array
 
 // 1c.Use a loop to iterate through the array and calculate the average age.
 console.log(' \n Question 1c: \n ');
@@ -40,7 +38,7 @@ console.log(arraySum / ages.length);
 // 2.	Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’.
 console.log(' \n Question 2: \n ');
 
-const names= ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
+let names= ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 console.log(names);
 
 // 2a.Use a loop to iterate through the array and calculate the average number of letters per name.
@@ -65,12 +63,12 @@ console.log(nameString);
 // 3.	How do you access the last element of any array ?
 console.log(' \n Question 3: \n ');
 
-console.log("This can be completed by using arrayname[arrayname.length - 1]")
+console.log("This can be completed by using arrayname[arrayname.length - 1]") // we add the -1 due to arrays being on a 0 based index, without the -1 we would get undefined
 
 // 4.	How do you access the first element of any array ?
 console.log(' \n Question 4: \n ');
 
-console.log("By using arrayname[0];");
+console.log("By using arrayname[0];"); 
 
 // 5.	Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
     // For example:
@@ -78,8 +76,8 @@ console.log("By using arrayname[0];");
     // let nameLengths = [5, 3, 4]; 			//create this new array
 console.log(' \n Question 5: \n ');
 
-console.log(names);
-const nameLengths = [];
+console.log(names); // I chose to print the names array above for testing and to show that the lengths do match the name lengths. This is not required for this to run though.
+let nameLengths = [];
 for (let i = 0; i < names.length; i++){
     nameLengths.push(names[i].length);
 }
@@ -102,18 +100,18 @@ function wordConcant(word, n) {
     for (i = 0; i < n; i++){
         output += word;
     }
-    console.log(output);
+    return output;
 }
-wordConcant('Hello', 8);
+console.log(wordConcant('Hello', 8));
 
 // 8.	Write a function that takes two parameters, firstName and lastName, and returns a full name.The full name should be the first and the last name separated by a space.
 console.log(' \n Question 8: \n ');
 
 function fullName(firstName, lastName) {
     let fullName = firstName + ' ' + lastName;
-    console.log(fullName);
+    return fullName;
 }
-fullName('John', 'Smith')
+console.log(fullName('John', 'Smith'));
 
 // 9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
 console.log(' \n Question 9: \n ');
@@ -126,10 +124,12 @@ function sumTrue(array) {
         sum += numberArray[i];
     }
     if (sum < 100) {
-        console.log(true);
-    } 
+        return true;
+    } else {
+        return false;
+    }
 }
-sumTrue(numberArray);
+console.log(sumTrue(numberArray));
 
 // 10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
 console.log(' \n Question 10: \n ');
@@ -140,36 +140,46 @@ function arrayAverage(arrayOfNumbers) {
         arraySum += arrayOfNumbers[i];
     }
     let output = arraySum / arrayOfNumbers.length;
-    console.log(output);
     return output;
 }
-arrayAverage(numberArray);
+console.log(arrayAverage(numberArray));
 
 // 11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
 console.log(' \n Question 11: \n ');
 
 function largerAverage(array1, array2) {
        if (arrayAverage(array1) > arrayAverage(array2)) {
-           console.log(true); //added console.log command to show results in console
            return true;
     } else {
-           console.log(false);
            return false;
     }
 }
-largerAverage(numberArray, nameLengths);
+console.log(largerAverage(numberArray, nameLengths));
+
 
 // 12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 console.log(' \n Question 12: \n ');
 
 function willBuyDrink(isHotOutside, moneyInPocket) {
     if (isHotOutside == true && moneyInPocket > 10.50) {
-        console.log(true);
+        return true;
     } else {
-        console.log("Do not buy a drink");
+        return "Do not buy a drink"; // while this wasn't required in the question I went ahead and added it so that way we can see a false value of sorts.
     }
 }
-willBuyDrink(true, 15);
+console.log(willBuyDrink(true, 15));
 
 // 13.	Create a function of your own that solves a problem.In comments, write what the function does and why you created it.
 console.log(' \n Question 13: \n ');
+
+//I have chosen to make a tip calculator, this function will take two paramaters. The Ticket Cost, and the Percentage
+
+function tipCalculator(bill, tipPercent) {
+    let tipAmount = ((bill * tipPercent) / 100); //this line here will determine the amount of the tip based on the percentage input by the user
+    let tip = Math.round(100 * tipAmount) / 100; //this line will round the cents of the tip amount to the nearest hundredth
+    let totalAmount = bill + tip; // this line will add the tip to the bill amount calculating the total amount to be paid by the user
+    let total = Math.round(100 * totalAmount) / 100; //this line will round the cents of the tip amount to the nearest hundredth
+    return 'The tip will be ' + tip + '. Making your total amount ' + total + '.'; // added the console.log output for the assignment so we can see that the code is functional.
+}
+
+console.log(tipCalculator(82.79, 14));
